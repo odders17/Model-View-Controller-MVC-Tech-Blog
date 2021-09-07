@@ -1,0 +1,421 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: inherit;
+}
+
+body, html {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  color: rgb(0, 66, 37);
+  background-color: rgb(240,229,188);
+}
+
+.logo {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+p {
+  font-size: large, bold;
+}
+
+
+
+#wrapper {
+  padding-left: 0;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+  padding-left: 250px;
+}
+
+#sidebar-wrapper {
+  z-index: 1000;
+  position: fixed;
+  left: 250px;
+  width: 0;
+  height: 100%;
+  margin-left: -250px;
+  overflow-y: auto;
+  background: #5c3c33;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  width: 250px;
+}
+
+#page-content-wrapper {
+  z-index: 1;
+  width: 100%;
+  position: absolute;
+  padding: 15px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+  position: absolute;
+  margin-right: -250px;
+}
+
+/* SIDEBAR */
+
+.sidebar-nav {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sidebar-nav li {
+  text-indent: 40px;
+  line-height: 40px;
+  margin-top: 20px;
+}
+
+.sidebar-nav li a {
+  display: block;
+  text-decoration: none;
+  color: #c3e6d5;
+}
+
+.sidebar-nav li a:hover {
+  text-decoration: none;
+  color: #fff;
+  background: rgba(255,255,255,0.2);
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+  text-decoration: none;
+  text-align: left;
+}
+
+.sidebar-nav > .sidebar-brand {
+  height: 65px;
+  font-size: 18px;
+  line-height: 60px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+  color: #5c3c33;
+  
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+  color: #5c3c33;
+  background: none;
+}
+
+main {
+  flex: 1;
+  padding: 2% 4%;
+  border: 1px solid #E8eddf;
+  background-color: #e8eddf;
+  border-radius: .5rem;
+  margin-top: 15%;
+  color: #333533;
+
+}
+
+
+
+@media(min-width:768px) {
+  #wrapper {
+      padding-left: 250px;
+  }
+
+  #wrapper.toggled {
+      padding-left: 0;
+  }
+
+  #sidebar-wrapper {
+      width: 250px;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+      width: 0;
+  }
+
+  #page-content-wrapper {
+      padding: 20px;
+      position: relative;
+  }
+
+  #wrapper.toggled #page-content-wrapper {
+      position: relative;
+      margin-right: 0;
+  }
+}
+a {
+  color: #5c3c33;
+  text-decoration: none;
+}
+.post:hover {
+  transform: scale(1.01);
+}
+
+logout:hover {
+  display: block;
+  text-decoration: none;
+  color: #c3e6d5;
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 2px;
+}
+
+
+button {
+  background-color: #5c3c33;
+  border: 0;
+  padding: 1%;
+  color: #bcc7c2;
+  font-weight: bold;
+  transition: background-color 0.1s;
+  cursor: pointer;
+  border-radius: 5px;
+  position: relative;
+  margin-top: 25px;
+}
+
+button:hover {
+  color: #5c3c33 ;
+}
+
+.login,
+.signup,
+.submit,
+.create {
+  background-color: #bcc7c2;
+  background: linear-gradient(to left, #bcc7c2 50%, #f2d47d 50%) right;
+  background-size: 300%;
+  transition: 1s ease-out;
+}
+
+.forms button:hover {
+  background-position: left;
+}
+
+a img {
+  margin-top: 12px;
+}
+
+.post-list {
+  margin-top: 24px;
+  padding: 0;
+}
+
+textarea, input {
+  padding: 0.5%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+textarea:focus, input:focus {
+  outline: none;
+  border: 1px solid #3486eb;
+}
+
+textarea {
+  min-width: 40%;
+  min-height: 100px;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+
+.form-signin .checkbox {
+  font-weight: 400;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-floating {
+  margin-top: 10px;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.login-form,
+.signup-form
+{
+  margin-top: 24px;
+  align-items: center;
+  padding: 10px 24px 24px 24px;
+  background-color: #e8eddf;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+  box-sizing: border-box;
+
+}
+
+.post {
+  margin-top: 24px;
+  align-items: center;
+  padding: 10px 24px 24px 24px;
+  background-color: #e8eddf;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+  box-sizing: border-box;
+
+}
+
+header {
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1%;
+}
+
+header h1 {
+  font-size: 28px;
+}
+
+h1 {
+  font-size: 64px;
+  color: #5c3c33;
+}
+
+.techblog {
+  border-bottom: 3px solid #b5ebe1;
+}
+
+.techblog:hover {
+  border-bottom: 3px dashed #5c3c33;
+}
+
+main {
+  flex: 1;
+  padding: 2% 4%;
+  border: 1px solid #5c3c33;
+}
+
+.username {
+  margin-left: 24px;
+}
+
+.btn-no-style {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: none;
+  color: #225ca3;
+  font-size: 100%;
+  font-weight: bold;
+  transition: color 0.1s;
+  margin-left: 16px;
+}
+
+.btn-no-style:hover {
+  background: none;
+  color: #3486eb;
+}
+
+.delete-post-btn {
+  background-color: #d41414;
+}
+
+.delete-post-btn:hover {
+  background-color: #ff643d;
+}
+
+.post {
+  margin-bottom: 2%;
+  line-height: 150%;
+}
+
+.post .title span {
+  font-style: italic;
+  font-size: 90%;
+  color: #7d7d7d;
+}
+
+.edit-link {
+  display: block;
+  margin: -1.5% 0 2% 0;
+}
+
+.upvote-btn {
+  background-color: #197d0f;
+  transition: background-color 0.1s;
+}
+
+.upvote-btn:hover {
+  background-color: #1f9c13;
+}
+
+.comment-form {
+  margin-bottom: 5%;
+}
+
+.comment {
+  padding: 1%;
+  margin-bottom: 1%;
+  border-radius: 3px;
+}
+
+.comment:nth-child(odd) {
+  background-color: #fdfdfd;
+;
+}
+
+.comment .meta {
+  font-size: 90%;
+  margin-bottom: 0.5%;
+  opacity: 0.6;
+}
+
+.new-post-form input {
+  width: 300px;
+}
+
+.edit-post-form {
+  margin-bottom: 5%;
+}
+
+.savediv {
+  border-radius: 4px;
+}
+
+.profileimg {
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: black;
+  text-align: center;
+}
