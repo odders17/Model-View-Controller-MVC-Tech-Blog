@@ -65,7 +65,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
-// create a Post
+// Post created
 router.post("/", withAuth, (req, res) => {
   Post.create({
     title: req.body.title,
@@ -89,7 +89,7 @@ router.post("/", withAuth, (req, res) => {
 //   })
 // });
 
-// update post
+// Post updated
 router.put("/:id", withAuth, (req, res) => {
   Post.update(
     {
@@ -115,7 +115,7 @@ router.put("/:id", withAuth, (req, res) => {
     });
 });
 
-// delete post
+// Post deleted
 router.delete("/:id", withAuth, (req, res) => {
   Post.destroy({
     where: {

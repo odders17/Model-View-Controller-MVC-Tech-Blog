@@ -12,7 +12,7 @@ Comment.findAll()
     });
 });
 
-// create a comment
+// comment created
 router.post("/", withAuth, async (req, res) => {
     // check the session
     if (req.session) {
@@ -30,7 +30,7 @@ router.post("/", withAuth, async (req, res) => {
     }
 });
 
-// delete comment
+// comment deleted
 router.delete('/:id', withAuth, (req, res) => {
     Comment.destroy({
     where: {
