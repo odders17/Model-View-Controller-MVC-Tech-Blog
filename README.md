@@ -58,3 +58,5 @@ Add a .env file to the root of the project
 DB_NAME='claret_blue_db'
 DB_USER='root'
 DB_PW=
+
+![mvcScreenshot](./public/images/mvcScreenshot.png)

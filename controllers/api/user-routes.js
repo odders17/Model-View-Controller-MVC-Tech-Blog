@@ -74,6 +74,7 @@ router.post("/signup", (req, res) => {
 
 // login route
 router.post('/login', (req, res) => {
+  console.log (req.body)
   User.findOne({
     where: {
       username: req.body.username
